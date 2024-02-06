@@ -11,20 +11,19 @@ class Tank:
         self.posicao = pos
 
     def acoes(self, mov):
-        if mov.upper != 'F':
+        if mov.upper() != 'F':
             self.ultimo_mov = mov
-            print("AAAAAAAAAAAA")
 
-        if mov.upper == "W":
+        if mov.upper() == "W":
             self.posicao[1] += 1
             print("sdasda")
-        elif mov.upper == "S":
+        elif mov.upper() == "S":
             self.posicao[1] = 50
-        elif mov.upper == "D":
+        elif mov.upper() == "D":
             self.posicao[0] += 1
-        elif mov.upper == "A":
+        elif mov.upper() == "A":
             self.posicao[0] -= 1
-        elif mov.upper == "F":
+        elif mov.upper() == "F":
             bala = bullet.Bullet()
             bala.inicio(self.posicao)
             return bala
@@ -32,7 +31,7 @@ class Tank:
 
 
     def voltar_pos(self):
-        match self.ultimo_mov.upper:
+        match self.ultimo_mov.upper():
             case 'W':
                 self.posicao[1] -= 1
             case 'S':
